@@ -6,8 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Yiki';
+
   isAuth = false;
+  appareilOne = 'Machine à laver';
+  appareilTwo = 'Frigo';
+  appareilThree = 'Ordinateur';
+
 
   constructor() {
     setTimeout(
@@ -15,6 +19,10 @@ export class AppComponent {
         this.isAuth = true;
       }, 4000
     );
+  }
+
+  onAllumer() {
+    console.log('On allume tout !');
   }
 
 
