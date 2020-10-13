@@ -9,7 +9,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class AppareilComponent implements OnInit {
 
   @Input() appareilName: string;
-  appareilStatus: string = 'éteint';
+  @Input() appareilStatus: string = 'éteint';
 
 
   constructor() {
@@ -20,5 +20,13 @@ export class AppareilComponent implements OnInit {
 
   getStatus() {
     return this.appareilStatus;
+  }
+
+  getColor() {
+    if(this.appareilStatus === 'allumé') {
+      return 'green';
+    } else if(this.appareilStatus === 'éteint') {
+      return 'red';
+    }
   }
 }
